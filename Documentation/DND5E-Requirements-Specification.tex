@@ -2,6 +2,16 @@
 
 \usepackage[margin=1in]{geometry}
 
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	linkcolor=blue,
+	citecolor=blue,
+	urlcolor=blue
+}
+	
+
+
 \usepackage{graphicx}
 \graphicspath{{Document-images/}}
 
@@ -15,58 +25,76 @@
 
 \section{Introduction}
 
-This document is the Software Requirements Specification document for the Dungeons \& Dragons 5th Edition Character Tools application . It will serve to unambiguously define the requirements of the application so that efforts in later stages of the development cycle may be more focused and effective.
+This document is the Software Requirements Specification document for the Dungeons \& Dragons 5th Edition Character Tools application. It will serve to unambiguously define the requirements of the application so that efforts in later stages of the development cycle may be more focused and effective.
 
 
 \subsection{Purpose}
 
 By formally defining the requirements of the application this document benefits the project in a number of ways:
 
-\begin{description}
-	\item [Reduces the development effort.] Explicitly specifying the requirements at the outset of the project minimises the amount of redesign, recording, and retesting. It can also expose omissions and inconsistencies earlier in the development cycle where such problems require less effort to rectify.
-	\item [Provides a basis for validation.] Design and implementation compliance plans can be produced using this SRS as a reference.
-\end{description}\\
-It is divided into \textbf{X} parts:
-
+\begin{itemize}
+	\item \textbf{Reduces the development effort:} Explicitly specifying the requirements at the outset of the project minimises the amount of redesign, recoding, and retesting. It can also expose omissions and inconsistencies earlier in the development cycle where such problems require less effort to rectify.
+	\item \textbf{Provides a basis for validation:} Design and implementation compliance plans can be produced using this SRS as a reference.\\
+\end{itemize}
+It is divided into \textbf{X} parts:\\
 The intended audience for this document includes the design, development, and testing teams who will find its contents invaluable as a basis for their work (whether that be designing interfaces or writing test suites to verify the meeting of specific requirements).
 
 
 \subsection{Scope}
+Application: Dungeons \& Dragons 5th Edition Character Tools\\
 
-Application: Dungeons \& Dragons 5th Edition Character Tools
-
+\noindent
 The intent of the application is to provide desktop GUI tools for creating, viewing, and storing characters in the D\&D 5E ruleset. Users will be able to make selections from the various player classes, backgrounds, races, and equipment lists, as well as customise the statistics, equipment, and levels of characters once they have been created.
 
 By consolidating all the choices that are found across the various books and supplements available to players into one application and providing a means of easily creating and viewing characters with those choices the application aims to streamline the process of planning or experimenting with characters.
 
-Additional features which the application could be extended with include a combat simulation facility, the option of sharing or exporting character profiles with others, and implementing the suite as a web application.
+Additional features which the application could be extended with include a combat simulation facility, the option of sharing or exporting character profiles with others, and implementing the suite as a web application.\\
 
+\noindent
 In order to provide an effective character creation suite it will be necessary for the application to:
+\begin{itemize}
+	\item Accurately model the systems present in D\&D 5E;
+	\item Be up to date on all the available character options that exist across the D\&D 5E books;
+	\item Since additional releases are inevitable the application should be able to easily integrate further options.
+	\item Provide a GUI that:
+	\begin{itemize}
+		\item Is pleasing to the eye;
+		\item Presents all the desired character information in a useful way, that is:
+		\begin{itemize}
+			\item Can all be viewed at once if needed;
+			\item Can be contrasted with other options;
+			\item Is self-explanatory either through labels or tooltips.				
+			\item Makes it easy to make selections or edits.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
 
-- Accurately model the systems present in D\&D 5E;
-- Be up to date on all the available character options that exist across the D\&D 5E books;
-	- Since additional releases are inevitable the application should be able to easily integrate further options.
-- Provide a GUI that:
-	- Is pleasing to the eye;
-	- Presents all the desired character information in a useful way, that is:
-		- Can all be viewed at once if needed;
-		- Can be contrasted with other options;
-		- Is self-explanatory either through labels or tooltips.
-	- Makes it easy to make selections or edits.
+\noindent
+\\In order to provide a combat simulation facility the application will need to be extended to include:
+\begin{itemize}
+	\item Data for modelling the various creatures that can be involved in combat with player characters;
+	\item Accurate modelling of the combat systems in D\&D5E;
+	\item A suitable interface for setting up, running, and analysing combat encounters.
+	\item Since D\&D5E combat is often represented as a grid of 5" by 5" squares it would make sense to base the interface around this model;
+	\item The scope of this feature does not extend to implementing an artificial intelligence system for creatures in the combat scenario.
+\end{itemize}
 
-In order to provide a combat simulation facility the application will need to be extended to include:
+\noindent
+Enabling the sharing or exporting of character profiles will require the application to be able to convert the totality of a character's attributes to a string, and in turn be able to import such a string and construct the same character entity.\\
 
-- Data for modelling the various creatures that can be involved in combat with player characters;
-- Accurate modelling of the combat systems in D\&D5E;
-- A suitable interface for setting up, running, and analysing combat encounters.
-- Since D\&D5E combat is often represented as a grid of 5" by 5" squares it would make sense to base the interface around this model;
-- The scope of this feature does not extend to implementing an artificial intelligence system for creatures in the combat scenario.
+\noindent
+Implementing the suite as a web application would entail embedding it into a website so that users will not have to run an executable on their desktop computer to use the application.\\
 
-Enabling the sharing or exporting of character profiles will require the application to be able to convert the totality of a character's attributes to a string, and in turn be able to import such a string and construct the same character entity.
+\hrule
+\noindent
+\\\\This SRS will limit itself to the:
+\begin{itemize}
+	\item Character creation and comparison suite;
+	\item Character export and import feature.
+\end{itemize}
 
-Implementing the suite as a web application would entail embedding it into a website so that users will not have to run an executable on their desktop computer to use the application.
-
-
+\noindent
+Any future projects intending to extend the application to include the combat simulator or convert it to be a web application will entail their own SRS documents. 
 
 \subsection{References}
 % This subsection should:
@@ -77,12 +105,12 @@ Implementing the suite as a web application would entail embedding it into a web
 % This information may be provided by reference to an appendix or to another document.
 
 
-This SRS shall be used in conjunction with the following documents:
+{\setlength{\parindent}{0cm}This SRS shall be used in conjunction with the following documents:\\
 
-D\&D5E Character Sheet, \ref{fig:appa}, Wizards of the Coast LLC, 28/08/2017.
+D\&D5E Character Sheet, \hyperref[fig:appa]{Figure \ref{fig:appa}} in Appendix, Wizards of the Coast LLC, 28/08/2017.\\
 
-D\&D5E Spellcasting Sheet, \ref{fig:appb}, Wizards of the Coast LLC, 28/08/2017.
-
+D\&D5E Spellcasting Sheet, \hyperref[fig:appb]{Figure \ref{fig:appb}} in Appendix, Wizards of the Coast LLC, 28/08/2017.\\
+}
 
 \subsection{Definitions, acronyms, and abbreviations}
 % This subsection should provide the definitions of all terms, acronyms, and abbreviations required to properly interpret the SRS. This information may be provided by reference to one or more appendixes in the SRS or by reference to other documents.
@@ -98,61 +126,121 @@ Acronym for Dungeon's \& Dragons 5th Edition. "5E" also used in isolation to abb
 
 \subsubsection{Character:}
 A character in the context of D\&D5E is an entity comprised of many different attributes that have been selected from a variety of options by a player including, but not limited to:
-
-- Name (e.g. Tiberius)
-- Race (e.g. Dwarf)
-- Class (e.g. Fighter)
-- Background (e.g. Folk Hero)
-
-A comprehensive picture of the elements that make up a character can be seen by examining the D\&D5E Character Sheet(MAKE A HYPERLINK) included in the Appendix.
+\begin{itemize}
+	\item Name (e.g. Tiberius)
+	\item Race (e.g. Dwarf)
+	\item Class (e.g. Fighter)
+	\item Background (e.g. Folk Hero)
+\end{itemize}
+A comprehensive picture of the elements that make up a character can be seen by examining the \hyperref[fig:appa]{D\&D5E Character Sheet} included in the Appendix.
 
 \subsubsection{Player}
 The person making a D\&D5E character, synonymous with "user" of the D\&D5E Character Tools application.
 
-
+\subsubsection{Player's Handbook}
+The core rulebook which defines most of the mechanics used in D\&D5E, often abbreviated to the PHB.
 
 \subsection{Overview}
 % This subsection should:
 % - Describe what the rest of the SRS contains;
 % - Explain how the SRS is organised.
 
+TODO
 
-
-
-
+\clearpage
 
 \section{Overall description}
-% This section of the SRS should describe the general factors that affect the product and its requirements. This section does not state specific requirements. Instead, it provides a background for those requirements, which are defined in detail in the Specific Requirements section later. Instead, it provides a background for those requirements, which are defined in detail in Section 3 of the SRS, and makes them easier to understand.
-% This section usually consists of six subsections as follows:
-% - Product perspective;
-% - Product functions;
-% - User characteristics;
-% - Constraints;
-% - Assumptions and dependencies;
-% - Apportioning of requirements.
+This section of the SRS will provide details of the factors influencing the requirements of the application, the intent being to provide a background/context which will make the requirements easier to understand.
+
 
 \subsection{Product perspective}
-% This subsection of the SRS should put the product into perspective with other related products. If the product is independent and totally self-contained, it should be so stated here. If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software.
-
-% A block diagram showing the major components of the larger system, interconnections, and external interfaces can be helpful.
-
-% This subsection should also describe how the software operates inside various constraints. For example, these constraints could include:
-% - System interfaces;
-% - User interfaces;
-% - Hardware interfaces;
-% - Software interfaces;
-% - Communications interfaces;
-% - Memory;
-% - Operations;
-% - Site adaptation requirements.
-
-\subsubsection{System interfaces}
-% This should list each system interface and identify the functionality of the software to accomplish the system requirement and the interface description to match the system.
+The application is a stand-alone and does not relate to any other applications or systems. That said, constraints that must be factored into the requirements of the system are detailed below: 
 
 \subsubsection{User interfaces}
-% This should specify the following:
-% - The logical characteristics of each interface between the software product and its users. This includes those configuration characteristics (e.g. required screen formats, page or window layouts, content of any reports or menus, or availability of programmable function keys) necessary to accomplish the software requirements.
-% - All the aspects of optimising the interface with the person who must use the system. This may simply comprise a list of do's and dont's on how the system will appear to the user. One example may be a requirement for the option of long or short error messages. Like all others, these requirements should be verifiable, e.g. "a clerk typist grade 4 can do function X in Z min after 1 h of training" rather than "a typist can do function X." (This may also be specified in the Software System Attributes under a section titled Ease of Use.)
+% - outline the interface characteristics (how many interfaces are there between it and the users?) necessary to accomplish the software requirements:
+%	- screen format
+%	- page or window layouts
+%	- content of any reports or menus
+%	- availability of any program function keys
+% - Describe aspects of optimising the interface with the end user in mind e.g. short vs. long error messages. Be specific and measurable.
+
+All user interaction with the application will be done via a GUI using mouse and keyboard. User input will consist of:
+
+\begin{enumerate}
+	\item \label{item:mouseclick} Clicking navigation and selection buttons with the mouse;
+	\item Brief bursts of keyboard input to enter numeric values or text fields (such as character names)
+	\item Pressing keyboard shortcuts to accomplish the same as \ref{item:mouseclick}.
+\end{enumerate}
+
+\noindent
+\emph{Screen format:}
+\begin{enumerate}
+	\item The application will need to provide a window that is capable of being rendered in full-screen or windowed mode, as well as able to be resized and/or minimised.
+	\item A minimum screen resolution of 1024x768 will be catered for, along with a maximum of 1920x1080.
+	\item A variety of aspect ratios shall be catered for:
+		\begin{itemize}
+			\item 4:3
+			\item 16:10
+			\item 16:9
+		\end{itemize}
+\end{enumerate}
+
+
+\noindent
+\emph{Window layouts and content}\\
+All of the window layouts will be consistent with respect:
+\begin{itemize}
+	\item Presence and placement of generic navigation buttons (e.g. "Previous", "Quit", "Log out").
+	\item Retaining the default window controls provided by the operating system whenever the application is not being rendered in full-screen mode.
+\end{itemize}
+
+\noindent
+All of the window contents will be consistent with respect:
+\begin{itemize}
+	\item The Tab key on the keyboard shall be usable to jump between fields.
+	\item Pressing F1 on the keyboard will produce a help message pop-up relating to the currently active window.
+	\item Pressing F2 on the keyboard or hovering the mouse over a label should provide an explanatory tooltip.
+\end{itemize}
+Regarding characteristics particular to specific interfaces:
+\begin{enumerate}
+	\item \textbf{Profile selection screen:} Window where the user shall be able to create or select a profile.
+		\begin{itemize}
+			\item A Default profile will be available from the outset.
+			\item Profiles shall be selectable via a drop-down selection box.
+		\end{itemize}
+	\item \textbf{Main menu:} Provides menu of buttons which are used to access the various tools of the application (e.g. "Create character", "Load character").
+	\item \textbf{Character creation mode prompt:} Prompts user to specify how a newly created character's ability scores are generated, in line with the options available within the PHB:
+		\begin{itemize}
+			\item \textit{Randomly}: Where 4 6-sided dice are rolled, the lowest one is discarded, and the remainder are added together. This is done 6 times to provide an array of 6 scores ranging 3-18 (e.g. [11, 12, 9, 15, 16, 8]). The player then chooses which ability is assigned each score. The score rolling process should be transparent and depict the scores being rolled one-by-one in order to involve the player in the score rolling process.
+			\item \textit{Standard array}: Instead of randomly generating values a standard array is provided to assign values from ([15, 14, 13, 12, 10, 8]). 
+			\item \textit{Customised ability scores}: 27 points are granted to spend on ability scores (see Table \ref{table:customscores}):
+				\begin{table}[b]
+				\begin{center}
+					\begin{tabular}{ ||c|c||c|c|| }
+						\hline
+						Score & Cost & Score & Cost\\
+						\hline\hline
+						8 & 0 & 12 & 4\\
+						9 & 1 & 13 & 5\\
+						10 & 2 & 14 & 7\\
+						11 & 3 & 15 & 9\\
+						\hline
+					\end{tabular}
+					\caption{Ability score points cost}
+					\label{table:customscores}
+				\end{center}
+			\end{table}
+		\item \textit{Manual entry}: The player has free reign to enter values from 3-18 (to account for having physically rolled a set of values or simply accommodating a player's desire to experiment).
+		\end{itemize}
+	\item \textbf{Character sheet:} Provides a character sheet displaying the chosen character's values (or a blank sheet if a new character is being created). Information will need to be laid out and formatted such that it is dense enough to minimise scrolling or tabbing between pages while maintaining readability.
+		\begin{itemize}
+			\item Dividing character information into separate tabs or pages containing attributes with a common thread may be recommended (e.g. 3 tabs named "Attributes and Skills", "Attacks \& Equipment", and "Proficiencies \& Traits").
+			\item An "Import character" button should produce a pop-up window providing the option of entering a character import string or specifying the location of a character file.
+			\item An "Export character" button should produce a pop-up window containing a string representing the totality of that character's attributes as well as a button enabling storage of the character within a file.
+		\end{itemize}
+	\item \textbf{Comparison tool:} A vertically split page with a selection box at the top of each half where a character can be selected to be displayed. In order to fit both characters' information on screen a view mode selection control will be provided (so the user can decide whether to contrast attributes, skills, or other aspects).
+\end{enumerate}
+
 
 \subsubsection{Hardware interfaces}
 % This should specify the logical characteristics of each interface between the software product and the hardware components of the system. This includes configuration characteristics (number of ports, instruction sets, etc.). It also covers such matters as what devices are to be supported, how they are to be supported, and protocols. For example, terminal support may specify full-screen support as opposed to line-by-line support.
@@ -400,16 +488,16 @@ The person making a D\&D5E character, synonymous with "user" of the D\&D5E Chara
 \section{D\&D5E Character Sheet}
 \begin{figure}
 	\centering
-	\includegraphics{character-sheet.png}
 	\caption{D\&D5E Character Sheet}
+	\includegraphics{character-sheet.png}
 	\label{fig:appa}
 \end{figure}
 
 \section{D\&D5E Spellcasting Sheet}
 \begin{figure}
 	\centering
-	\includegraphics{spell-sheet}
 	\caption{D\&D5E Spellcasting Sheet}
+	\includegraphics{spell-sheet}
 	\label{fig:appb}
 \end{figure}
 
