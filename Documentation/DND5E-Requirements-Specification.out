@@ -12,41 +12,34 @@
 \BOOKMARK [1][-]{section.2}{Overall description}{}% 12
 \BOOKMARK [2][-]{subsection.2.1}{Product perspective}{section.2}% 13
 \BOOKMARK [3][-]{subsubsection.2.1.1}{User interfaces}{subsection.2.1}% 14
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Hardware interfaces}{subsection.2.1}% 15
-\BOOKMARK [3][-]{subsubsection.2.1.3}{Software interfaces}{subsection.2.1}% 16
-\BOOKMARK [3][-]{subsubsection.2.1.4}{Communications interfaces}{subsection.2.1}% 17
-\BOOKMARK [3][-]{subsubsection.2.1.5}{Memory constraints}{subsection.2.1}% 18
-\BOOKMARK [3][-]{subsubsection.2.1.6}{Operations}{subsection.2.1}% 19
-\BOOKMARK [3][-]{subsubsection.2.1.7}{Site adaptation requirements}{subsection.2.1}% 20
-\BOOKMARK [2][-]{subsection.2.2}{Product functions}{section.2}% 21
-\BOOKMARK [2][-]{subsection.2.3}{User characteristics}{section.2}% 22
-\BOOKMARK [2][-]{subsection.2.4}{Constraints}{section.2}% 23
-\BOOKMARK [2][-]{subsection.2.5}{Assumptions and dependencies}{section.2}% 24
-\BOOKMARK [2][-]{subsection.2.6}{Apportioning of requirements}{section.2}% 25
-\BOOKMARK [1][-]{section.3}{Specific requirements}{}% 26
-\BOOKMARK [2][-]{subsection.3.1}{External interfaces}{section.3}% 27
-\BOOKMARK [2][-]{subsection.3.2}{Functions}{section.3}% 28
-\BOOKMARK [2][-]{subsection.3.3}{Performance requirements}{section.3}% 29
-\BOOKMARK [2][-]{subsection.3.4}{Logical database requirements}{section.3}% 30
-\BOOKMARK [2][-]{subsection.3.5}{Design constraints}{section.3}% 31
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Standards compliance}{subsection.3.5}% 32
-\BOOKMARK [2][-]{subsection.3.6}{Software system attributes}{section.3}% 33
-\BOOKMARK [3][-]{subsubsection.3.6.1}{Reliability}{subsection.3.6}% 34
-\BOOKMARK [3][-]{subsubsection.3.6.2}{Availability}{subsection.3.6}% 35
-\BOOKMARK [3][-]{subsubsection.3.6.3}{Security}{subsection.3.6}% 36
-\BOOKMARK [3][-]{subsubsection.3.6.4}{Maintainability}{subsection.3.6}% 37
-\BOOKMARK [3][-]{subsubsection.3.6.5}{Portability}{subsection.3.6}% 38
-\BOOKMARK [2][-]{subsection.3.7}{Organising the specific requirements}{section.3}% 39
-\BOOKMARK [3][-]{subsubsection.3.7.1}{System mode}{subsection.3.7}% 40
-\BOOKMARK [3][-]{subsubsection.3.7.2}{User class}{subsection.3.7}% 41
-\BOOKMARK [3][-]{subsubsection.3.7.3}{Objects}{subsection.3.7}% 42
-\BOOKMARK [3][-]{subsubsection.3.7.4}{Feature}{subsection.3.7}% 43
-\BOOKMARK [3][-]{subsubsection.3.7.5}{Stimulus}{subsection.3.7}% 44
-\BOOKMARK [3][-]{subsubsection.3.7.6}{Response}{subsection.3.7}% 45
-\BOOKMARK [3][-]{subsubsection.3.7.7}{Functional hierarchy}{subsection.3.7}% 46
-\BOOKMARK [2][-]{subsection.3.8}{Additional comments}{section.3}% 47
-\BOOKMARK [1][-]{section.4}{Supporting information}{}% 48
-\BOOKMARK [2][-]{subsection.4.1}{Table of contents and index}{section.4}% 49
-\BOOKMARK [2][-]{subsection.4.2}{Appendixes}{section.4}% 50
-\BOOKMARK [1][-]{appendix.A}{D\046D5E Character Sheet}{}% 51
-\BOOKMARK [1][-]{appendix.B}{D\046D5E Spellcasting Sheet}{}% 52
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Software interfaces}{subsection.2.1}% 15
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Memory constraints}{subsection.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.2}{Product functions}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.3}{User characteristics}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.4}{Apportioning of requirements}{section.2}% 19
+\BOOKMARK [1][-]{section.3}{Specific requirements}{}% 20
+\BOOKMARK [2][-]{subsection.3.1}{External interface requirements}{section.3}% 21
+\BOOKMARK [3][-]{subsubsection.3.1.1}{User interfaces}{subsection.3.1}% 22
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Hardware interfaces}{subsection.3.1}% 23
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Software interfaces}{subsection.3.1}% 24
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Communications interfaces}{subsection.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.2}{Classes/Objects}{section.3}% 26
+\BOOKMARK [3][-]{subsubsection.3.2.1}{CLASS/OBJECT-ONE}{subsection.3.2}% 27
+\BOOKMARK [4][-]{paragraph.3.2.1.1}{Attributes \(direct or inherited\)}{subsubsection.3.2.1}% 28
+\BOOKMARK [5][-]{subparagraph.3.2.1.1.1}{ATTRIBUTE-ONE}{paragraph.3.2.1.1}% 29
+\BOOKMARK [4][-]{paragraph.3.2.1.2}{Functions \(services, methods, direct or inherited\)}{subsubsection.3.2.1}% 30
+\BOOKMARK [5][-]{subparagraph.3.2.1.2.1}{FUNCTIONAL REQUIREMENT ONE}{paragraph.3.2.1.2}% 31
+\BOOKMARK [4][-]{paragraph.3.2.1.3}{Messages \(communications received or sent\)}{subsubsection.3.2.1}% 32
+\BOOKMARK [2][-]{subsection.3.3}{Performance requirements}{section.3}% 33
+\BOOKMARK [2][-]{subsection.3.4}{Design constraints}{section.3}% 34
+\BOOKMARK [2][-]{subsection.3.5}{Software system attributes}{section.3}% 35
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Reliability}{subsection.3.5}% 36
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Availability}{subsection.3.5}% 37
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Security}{subsection.3.5}% 38
+\BOOKMARK [3][-]{subsubsection.3.5.4}{Maintainability}{subsection.3.5}% 39
+\BOOKMARK [3][-]{subsubsection.3.5.5}{Portability}{subsection.3.5}% 40
+\BOOKMARK [1][-]{section.4}{Supporting information}{}% 41
+\BOOKMARK [2][-]{subsection.4.1}{Table of contents and index}{section.4}% 42
+\BOOKMARK [2][-]{subsection.4.2}{Appendixes}{section.4}% 43
+\BOOKMARK [1][-]{appendix.A}{D\046D5E Character Sheet}{}% 44
+\BOOKMARK [1][-]{appendix.B}{D\046D5E Spellcasting Sheet}{}% 45

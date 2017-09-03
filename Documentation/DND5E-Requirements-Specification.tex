@@ -1,6 +1,12 @@
 \documentclass{article}
 
+\setcounter{secnumdepth}{6} % cause \paragraph to be numbered, e.g. function like \subsubsubsection.
+\setcounter{tocdepth}{6} % cause \paragraph to appear in TOC
+
 \usepackage[margin=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{er,positioning}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -25,7 +31,7 @@
 
 \section{Introduction}
 
-This document is the Software Requirements Specification document for the Dungeons \& Dragons 5th Edition Character Tools application. It will serve to unambiguously define the requirements of the application so that efforts in later stages of the development cycle may be more focused and effective.
+This document is the Software Requirements Specification document for the Dungeons \& Dragons 5th Edition Character Tools application, written to conform with the IEEE's guidelines on SRS documents. It will serve to unambiguously define the requirements of the application so that efforts in later stages of the development cycle may be more focused and effective.
 
 
 \subsection{Purpose}
@@ -41,6 +47,7 @@ The intended audience for this document includes the design, development, and te
 
 
 \subsection{Scope}
+\label{sec:scope}
 Application: Dungeons \& Dragons 5th Edition Character Tools\\
 
 \noindent
@@ -84,17 +91,6 @@ Enabling the sharing or exporting of character profiles will require the applica
 
 \noindent
 Implementing the suite as a web application would entail embedding it into a website so that users will not have to run an executable on their desktop computer to use the application.\\
-
-\hrule
-\noindent
-\\\\This SRS will limit itself to the:
-\begin{itemize}
-	\item Character creation and comparison suite;
-	\item Character export and import feature.
-\end{itemize}
-
-\noindent
-Any future projects intending to extend the application to include the combat simulator or convert it to be a web application will entail their own SRS documents. 
 
 \subsection{References}
 % This subsection should:
@@ -157,19 +153,12 @@ This section of the SRS will provide details of the factors influencing the requ
 The application is a stand-alone and does not relate to any other applications or systems. That said, constraints that must be factored into the requirements of the system are detailed below: 
 
 \subsubsection{User interfaces}
-% - outline the interface characteristics (how many interfaces are there between it and the users?) necessary to accomplish the software requirements:
-%	- screen format
-%	- page or window layouts
-%	- content of any reports or menus
-%	- availability of any program function keys
-% - Describe aspects of optimising the interface with the end user in mind e.g. short vs. long error messages. Be specific and measurable.
-
 All user interaction with the application will be done via a GUI using mouse and keyboard. User input will consist of:
 
 \begin{enumerate}
 	\item \label{item:mouseclick} Clicking navigation and selection buttons with the mouse;
 	\item Brief bursts of keyboard input to enter numeric values or text fields (such as character names)
-	\item Pressing keyboard shortcuts to accomplish the same as \ref{item:mouseclick}.
+	\item Pressing keyboard shortcuts to accomplish the same as \ref{item:mouseclick}.\\
 \end{enumerate}
 
 \noindent
@@ -181,7 +170,7 @@ All user interaction with the application will be done via a GUI using mouse and
 		\begin{itemize}
 			\item 4:3
 			\item 16:10
-			\item 16:9
+			\item 16:9\\
 		\end{itemize}
 \end{enumerate}
 
@@ -241,44 +230,14 @@ Regarding characteristics particular to specific interfaces:
 	\item \textbf{Comparison tool:} A vertically split page with a selection box at the top of each half where a character can be selected to be displayed. In order to fit both characters' information on screen a view mode selection control will be provided (so the user can decide whether to contrast attributes, skills, or other aspects).
 \end{enumerate}
 
-
-\subsubsection{Hardware interfaces}
-% This should specify the logical characteristics of each interface between the software product and the hardware components of the system. This includes configuration characteristics (number of ports, instruction sets, etc.). It also covers such matters as what devices are to be supported, how they are to be supported, and protocols. For example, terminal support may specify full-screen support as opposed to line-by-line support.
-
+\noindent
+The default user interface will not provide verbose explanation of labels and fields on account of the assumed presence of mouse-over tooltips and accessible help pop-ups.
 
 \subsubsection{Software interfaces}
-% This should specify the use of other required software products (e.g., a data management system, an operating system, or a mathematical package), and interfaces with other application systems (e.g. the linkage between an accounts receivable system and a general ledger system). For each required software product, the following should be provided:
-% - Name;
-% - Mnemonic;
-% - Specification number;
-% - Version number;
-% - Source.
-
-% For each interface, the following should be provided:
-% - Discussion of the purpose of the interfacing software as related to this software product;
-% - Definition of the interface in terms of message content and format. It is not necessary to detail any well-documented interface, but a reference to the document defining the interface is required.
-
-\subsubsection{Communications interfaces}
-% This should specify the various interfaces to communications such as local network protocols, etc.
+The presence of an Operating System capable of running the Java Virtual Machine is assumed, otherwise there are no specific software requirements associated with running the application.
 
 \subsubsection{Memory constraints}
-% This should specify any applicable characteristics and limits on primary and secondary memory.
-
-\subsubsection{Operations}
-% This should specify the normal and special operations required by the user such as:
-% - The various modes of operations in the user organisation (e.g. user-initiated operations);
-% - Periods of interactive operations and periods of unattended operations;
-% - Data processing support functions;
-%- Backup and recovery operations.
-
-% NOTE - This is sometimes specified as part of the User Interfaces sections.
-
-
-\subsubsection{Site adaptation requirements}
-% This should:
-% - Define the requirements for any data or initialisation sequences that are specific to a given site, mission, or operational mode (e.g., grid values, safety limits, etc.);
-% - Specify the site or mission-related features that should be modified to adapt the software to a particular installation.
-
+Since the application is intended to be operable on relatively low performance hardware the application will be constrained to operate within a 2GB memory limit. This will ensure that the application will operate effectively on a system possessing 4GB of memory (and assuming some of that will be allocated to the operating system and other background programs).
 
 
 \subsection{Product functions}
@@ -288,32 +247,47 @@ Regarding characteristics particular to specific interfaces:
 % - The functions should be organised in a way that makes the list of functions understandable to the customer or to anyone else reading the document for the first time.
 % - textual or graphical models can be used to show the different functions and their relationships. Such a diagram is not intended to show a design of a product, but simply shows the logical relationships among variables.
 
+\begin{enumerate}
+	\item \textbf{Profile creation:} The user will be able to create a new profile if they would prefer to organise the characters they create using the profile system.
+	\item \textbf{Profile selection:} The user will be able to select a profile from the list of existing profiles to browse the characters associated with that profile.
+	\item \textbf{Profile deletion:} The user will be able to delete any existing profiles (except the "Default" profile).
+	\item \textbf{Character creation:} The user will be able to create a new character which will be associated with the profile they are using (see Figure \hyperlink{fig:profilerels}{\ref{fig:profilerels}}).
+	\item \textbf{Storing characters:} The user will be able to store characters that they have created or modified in a local file on their system so that the character details can be loaded in future.
+	\item \textbf{Loading characters:} The user will be able to load a previously created character from a local file. Previously loaded profiles will be listed under a "Recently accessed" window.
+	\item \textbf{Deleting characters:} The user will be able to delete characters associated with the current profile, deleting the local file and that character's listing in the "Recently Accessed" window.
+	\item \textbf{Modifying characters:} Once a character has been created/loaded, the user will be able to make adjustments to the various values associated with the character (e.g. increase it's level, make changes to their inventory, etc).
+	\item \textbf{Export characters to a String:} The application will be able to produce a string representation of the active character sheet which the user can share so that another use may import the same character settings into their application.
+	\item \textbf{Comparison of characters:} The user will be able to view and contrast a pair of characters simultaneously, selecting what aspect of the characters the display mode is focused on at that given moment.
+\end{enumerate}
+
+
+% Insert entity-relationship diagram for application-profile-character
+\begin{figure}[b]
+	\centering
+\begin{tikzpicture}[auto,node distance=1.5cm]
+
+	\node[entity] (application) {Application};
+	\node[entity] (profile1) [above left = of application] {Profile 1} 
+	[grow=up, sibling distance=3cm]
+	child {node[entity] {Character 1\textsubscript{2}}}
+	child {node[entity] {Character 1\textsubscript{1}}} edge (application);
+
+	\node[entity] (profile2) [above right = of application] {Profile 2} 
+	[grow=up, sibling distance=3cm]
+	child {node[entity] {Character 2\textsubscript{2}}}
+	child {node[entity] {Character 2\textsubscript{1}}} edge (application);
+
+\end{tikzpicture}
+	\caption{Application $>$ Profile $>$ Character relationship diagram}
+	\label{fig:profilerels}
+\end{figure}
+
 
 \subsection{User characteristics}
-% This subsection of the SRS should describe those general characteristics of the intended users of the product including educational level, experience, and technical expertise. It should not be used to state specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.
-
-
-\subsection{Constraints}
-% This subsection of the SRS should provide a general description of any other items that will limit the developer's options. These include:
-% - Regulatory policies;
-% - Hardware limitations (e.g. signal timing requirements);
-% - Interfaces to other applications;
-% - Parallel operation;
-% - Audit functions;
-% - Control functions;
-% - Higher-order language requirements;
-% - Signal handshake protocols (e.g. XON-XOFF, ACK-NACK);
-% - Reliability requirements;
-% - Criticality of the application;
-% - Safety and security considerations.
-
-\subsection{Assumptions and dependencies}
-% This subsection of the SRS should list each of the factors that affect the requirements stated in the SRS. These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not available, the SRS would then have to change accordingly.
-
+The intended audience of the product will be players of the D\&D5E game, as such, it is assumed that the users will be familiar with how the mechanics of the game work. Because of this the application will not be concerned with explaining how the systems work, only implementing them accurately and providing sufficient tooltip and help documentation for users to make use of the tools effectively. As an example, the application cannot assume that users will understand intuitively how to store, load, or export characters; how to make use of application features will need to be thoroughly documented.
 
 \subsection{Apportioning of requirements}
-% This subsection of the SRS should identify requirements that may be delayed until future versions of the system.
-
+In section \ref{sec:scope} the scope definition included descriptions of how the application could be extended to provide combat simulation tools or be converted to be run in a web browser. Both of these features are considered to be less of a priority than the other functions covered previously and consequently will not be a concern for the rest of this SRS. If a future project does start to extend the application with these features then a separate SRS will be produced. 
 
 
 \section{Specific requirements}
@@ -325,8 +299,19 @@ Regarding characteristics particular to specific interfaces:
 
 % Before examining specific ways of organising the requirements it is helpful to understand the various items that comprise requirements as describe in the following sub-sections.
 
+% Remember that the requirements in a good SRS will embody the following traits:
+% - Correct;
+% - Unambiguous;
+% - Complete;
+% - Consistent;
+% - Ranked for importance and/or stability;
+% - Verifiable;
+% - Modifiable;
+% - Traceable.
 
-\subsection{External interfaces}
+
+
+\subsection{External interface requirements}
 % This should be a detailed description of all inputs into and outputs from the software system. It should complement the interface descriptions in 5.2 and should not repeat information there.
 
 % It should include both content and format as follows:
@@ -343,7 +328,21 @@ Regarding characteristics particular to specific interfaces:
 % - Command formats;
 % - End messages.
 
-\subsection{Functions}
+\subsubsection{User interfaces}
+
+\subsubsection{Hardware interfaces}
+
+\subsubsection{Software interfaces}
+
+\subsubsection{Communications interfaces}
+
+\subsection{Classes/Objects}
+\subsubsection{CLASS/OBJECT-ONE}
+\paragraph{Attributes (direct or inherited)}
+\subparagraph{ATTRIBUTE-ONE}
+
+\paragraph{Functions (services, methods, direct or inherited)}
+\subparagraph{FUNCTIONAL REQUIREMENT ONE}
 % Functional requirements should define the fundamental actions that must take place in the software in accepting and processing the inputs and in processing and generating the outputs. These are generally listed as "shall" statements starting with "The system shall..."
 
 % These include:
@@ -359,6 +358,10 @@ Regarding characteristics particular to specific interfaces:
 	% - Formulas for input to output conversions.
 
 % It may be appropriate to partition the functional requirements into subfunctions or subprocesses. This does not imply that the software design will also be partitioned this way.
+
+
+\paragraph{Messages (communications received or sent)}
+
 
 \subsection{Performance requirements}
 % This subsection should specify both the static and the dynamic numerical requirements placed on the software or on human interaction with the software as a whole. Static numerical requirements may include the following:
@@ -380,27 +383,9 @@ Regarding characteristics particular to specific interfaces:
 % NOTE - Numerical limits applied to one specific function are normally specified as part of the processing subparagraph.
 
 
-\subsection{Logical database requirements}
-% This should specify the logical requirements for any information that is to be placed into a database. This may include the following:
-% - Types of information used by various functions;
-% - Frequency of use;
-% - Accessing capabilities;
-% - Data entities and their relationships;
-% - Integrity constraints;
-% - Data retention requirements.
-
 
 \subsection{Design constraints}
 % This should specify design constraints that can be imposed by other standards, hardware limitations, etc.
-
-\subsubsection{Standards compliance}
-% This subsection should specify the requirements derived from existing standards or regulations. They may include the following:
-% - Report format;
-% - Data naming;
-% - Accounting procedures;
-% - Audit tracing.
-
-% For example, this could specify the requirement for software to trace processing activity. Such traces are needed for some applications to meet minimum regulatory or financial standards. An audit trace requirement may, for example, state that all changes to a payroll database must be recorded in a trace file with before and after values.
 
 
 \subsection{Software system attributes}
@@ -432,38 +417,6 @@ Regarding characteristics particular to specific interfaces:
 % - Use of a particular compiler or language subset;
 % - Use of a particular operating system.
 
-
-\subsection{Organising the specific requirements}
-% For anything but trivial systems the detailed requirements tend to be extensive. For this reason, it is recommended that careful consideration be given to organising these in a manner optimal for understanding. There is no one optimal organisation for all systems. Different classes of systems lend themselves to different organisations of requirements in Section 3 of the SRS. Examples of some of these organisations are described below:
-
-\subsubsection{System mode}
-% Some systems behave quite differently depending on the mode of operation. For example, a control system may have different sets of functions depending on its mode: training, normal, or emergency. When organising this section by mode, the outline A.1 or A.2 should be used. The choice depends on whether interfaces and performance and dependent on mode.
-
-\subsubsection{User class}
-% Some systems provide different sets of functions to different classes of users. For example, an elevator control system presents different capabilities to passenger, maintenance workers, and fire fighters. When organising this section by user class, the outline in A.3 should be used.
-
-\subsubsection{Objects}
-% Objects are real-world entities that have a counterpart within the system. For example, in a patient monitoring system, objects include patients, sensors, nurses, rooms, physicians, medicines, etc. Associated with each object is a set of attributes (of that object) and functions (performed by that object). These functions are also called services, methods, or processes. When organising this section by object, the outline in A.4 should be used. Note that sets of objects may share attributes and services. These are grouped together as classes.
-
-\subsubsection{Feature}
-% A feature is an externally desired service by the system that may require a sequence of inputs to effect the desired result. For example, in a telephone system, features include local call, call forwarding, and conference call. Each feature is generally described in a sequence of stimulus-response pairs. When organising this section by feature, the outline in A.5 should be used.
-
-\subsubsection{Stimulus}
-% Some systems can be best organised by describing their functions in terms of stimuli. For example, the functions of an automatic aircraft landing system may be organised into sections for loss of power, wind shear, sudden change in roll, vertical velocity excessive, etc. When organising this section by stimulus, the outline in A.6 should be used.
-
-\subsubsection{Response}
-% Some systems can be best organised by describing all the functions in support of the generation of a response. For example, the functions of a personnel system may be organised into sections corresponding to all functions associated with generating paychecks, all functions associated with generating a current list of employees, etc. The outline in A.6 (with all occurrences of stimulus replaced with response should be used.
-
-\subsubsection{Functional hierarchy}
-% When none of the above organisational schemes prove helpful, the overall functionality can be organised into a hierarchy of functions organised by either common inputs, common outputs, or common internal data access. Data flow diagrams and data dictionaries can be used to show the relationships between and among the functions and data. When organising this section by functional hierarchy, the outline in A.7 should be used.
-
-
-\subsection{Additional comments}
-% Whenever a new SRS is contemplated, more than one of the organisational techniques previously outlined may be appropriate. In such cases, organise the specific requirements for multiple hierarchies tailored to the specific needs of the system under specification. For example, see A.8 for an combining user and class and feature. Any additional requirements may be put in a separate section at the end of the SRS.
-
-% There are many notations, methods, and automated support tools available to aid in the documentation of requirements. For the most part, their usefulness is a function of organisation. For example, when organising by mode, finite state machines or state charts may prove helpful; when organising by object, object-oriented analysis may prove helpful; when organising by feature, stimulus-response sequences may prove helpful; and when organising by functional hierarchy, data flow diagrams and data dictionaries may prove helpful.
-
-% In any of the outlines given in A.1 through A.8, those sections called "Functional Requirements i" may be described in native language (e.g. English), in pseudocode, in a system definition language, or in four sub-sections titled; Introduction, Inputs, Processing, and Outputs.
 
 \section{Supporting information}
 % The supporting information makes the SRS easier to use. It includes the following:
