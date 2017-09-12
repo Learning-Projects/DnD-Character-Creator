@@ -20,26 +20,48 @@
 \BOOKMARK [1][-]{section.3}{Specific requirements}{}% 20
 \BOOKMARK [2][-]{subsection.3.1}{External interface requirements}{section.3}% 21
 \BOOKMARK [3][-]{subsubsection.3.1.1}{User interfaces}{subsection.3.1}% 22
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Hardware interfaces}{subsection.3.1}% 23
-\BOOKMARK [3][-]{subsubsection.3.1.3}{Software interfaces}{subsection.3.1}% 24
-\BOOKMARK [3][-]{subsubsection.3.1.4}{Communications interfaces}{subsection.3.1}% 25
-\BOOKMARK [2][-]{subsection.3.2}{Classes/Objects}{section.3}% 26
-\BOOKMARK [3][-]{subsubsection.3.2.1}{CLASS/OBJECT-ONE}{subsection.3.2}% 27
-\BOOKMARK [4][-]{paragraph.3.2.1.1}{Attributes \(direct or inherited\)}{subsubsection.3.2.1}% 28
-\BOOKMARK [5][-]{subparagraph.3.2.1.1.1}{ATTRIBUTE-ONE}{paragraph.3.2.1.1}% 29
-\BOOKMARK [4][-]{paragraph.3.2.1.2}{Functions \(services, methods, direct or inherited\)}{subsubsection.3.2.1}% 30
-\BOOKMARK [5][-]{subparagraph.3.2.1.2.1}{FUNCTIONAL REQUIREMENT ONE}{paragraph.3.2.1.2}% 31
-\BOOKMARK [4][-]{paragraph.3.2.1.3}{Messages \(communications received or sent\)}{subsubsection.3.2.1}% 32
-\BOOKMARK [2][-]{subsection.3.3}{Performance requirements}{section.3}% 33
-\BOOKMARK [2][-]{subsection.3.4}{Design constraints}{section.3}% 34
-\BOOKMARK [2][-]{subsection.3.5}{Software system attributes}{section.3}% 35
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Reliability}{subsection.3.5}% 36
-\BOOKMARK [3][-]{subsubsection.3.5.2}{Availability}{subsection.3.5}% 37
-\BOOKMARK [3][-]{subsubsection.3.5.3}{Security}{subsection.3.5}% 38
-\BOOKMARK [3][-]{subsubsection.3.5.4}{Maintainability}{subsection.3.5}% 39
-\BOOKMARK [3][-]{subsubsection.3.5.5}{Portability}{subsection.3.5}% 40
-\BOOKMARK [1][-]{section.4}{Supporting information}{}% 41
-\BOOKMARK [2][-]{subsection.4.1}{Table of contents and index}{section.4}% 42
-\BOOKMARK [2][-]{subsection.4.2}{Appendixes}{section.4}% 43
-\BOOKMARK [1][-]{appendix.A}{D\046D5E Character Sheet}{}% 44
-\BOOKMARK [1][-]{appendix.B}{D\046D5E Spellcasting Sheet}{}% 45
+\BOOKMARK [4][-]{paragraph.3.1.1.1}{Startup}{subsubsection.3.1.1}% 23
+\BOOKMARK [5][-]{subparagraph.3.1.1.1.1}{The application shall display the profileselectionProfile selection screen at program start}{paragraph.3.1.1.1}% 24
+\BOOKMARK [4][-]{paragraph.3.1.1.2}{Profile selection screen}{subsubsection.3.1.1}% 25
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.1}{The profileselectionProfile selection screen shall display all existing profiles}{paragraph.3.1.1.2}% 26
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.2}{The profileselectionProfile selection screen shall provide a Default profile on initial startup and thereafter}{paragraph.3.1.1.2}% 27
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.3}{The profileselectionProfile selection screen shall provide means of creating a new profile}{paragraph.3.1.1.2}% 28
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.4}{The profileselectionProfile selection screen shall provide means of proceeding to the mainmenuMain Menu with a selected profile}{paragraph.3.1.1.2}% 29
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.5}{The profileselectionProfile selection screen shall provide means of deleting a selected profile \(except the Default profile\)}{paragraph.3.1.1.2}% 30
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.6}{Pressing the F1 key on the keyboard with the profileselectionProfile selection screen active shall display a help message pop-up relating to the profileselectionProfile selection screen}{paragraph.3.1.1.2}% 31
+\BOOKMARK [5][-]{subparagraph.3.1.1.2.7}{The profileselectionProfile selection screen shall include a button which can be clicked to close the application}{paragraph.3.1.1.2}% 32
+\BOOKMARK [4][-]{paragraph.3.1.1.3}{Main menu}{subsubsection.3.1.1}% 33
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.1}{The mainmenuMain menu shall display a collection of navigation buttons which can be clicked to access every one of the following facilities:}{paragraph.3.1.1.3}% 34
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.2}{The mainmenuMain menu shall include a button which can be clicked to return to the profileselectionProfile selection screen}{paragraph.3.1.1.3}% 35
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.3}{Pressing the F1 key on the keyboard with the mainmenuMain menu active shall display a help message pop-up relating to the mainmenuMain menu}{paragraph.3.1.1.3}% 36
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.4}{When the Create character button is clicked the user will be prompted to select how they would like to generate their character's ability scores}{paragraph.3.1.1.3}% 37
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.5}{Pressing the 1 key while the mainmenuMain menu is active will prompt the user to select how they would like to generate their character's ability scores}{paragraph.3.1.1.3}% 38
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.6}{When the Load character button is clicked the application should display the charsheetCharacter sheet and immediately open a pop-up window as if the ``Load character'' button on the charsheetCharacter sheet had been clicked}{paragraph.3.1.1.3}% 39
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.7}{When the 2 key is pressed the application should display the charsheetCharacter sheet and immediately open a pop-up window as if the ``Load character'' button on the charsheetCharacter sheet had been clicked}{paragraph.3.1.1.3}% 40
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.8}{When the Compare character button is clicked the comparisontoolComparison tool should be displayed}{paragraph.3.1.1.3}% 41
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.9}{When the 3 key is pressed the comparisontoolComparison tool should be displayed}{paragraph.3.1.1.3}% 42
+\BOOKMARK [5][-]{subparagraph.3.1.1.3.10}{Pressing the Escape key while the mainmenuMain menu is active will return to the profileselectionProfile selection screen}{paragraph.3.1.1.3}% 43
+\BOOKMARK [4][-]{paragraph.3.1.1.4}{Character creation mode prompt}{subsubsection.3.1.1}% 44
+\BOOKMARK [5][-]{subparagraph.3.1.1.4.1}{The creationpromptCharacter creation mode prompt shall include a button which can be clicked to return to the mainmenuMain Menu}{paragraph.3.1.1.4}% 45
+\BOOKMARK [5][-]{subparagraph.3.1.1.4.2}{The creationpromptCharacter creation mode prompt shall provide selection buttons and explanations of the 4 options:}{paragraph.3.1.1.4}% 46
+\BOOKMARK [5][-]{subparagraph.3.1.1.4.3}{If the ``Randomly'' option is selected then}{paragraph.3.1.1.4}% 47
+\BOOKMARK [2][-]{subsection.3.2}{Classes/Objects}{section.3}% 48
+\BOOKMARK [3][-]{subsubsection.3.2.1}{CLASS/OBJECT-ONE}{subsection.3.2}% 49
+\BOOKMARK [4][-]{paragraph.3.2.1.1}{Attributes \(direct or inherited\)}{subsubsection.3.2.1}% 50
+\BOOKMARK [5][-]{subparagraph.3.2.1.1.1}{ATTRIBUTE-ONE}{paragraph.3.2.1.1}% 51
+\BOOKMARK [4][-]{paragraph.3.2.1.2}{Functions \(services, methods, direct or inherited\)}{subsubsection.3.2.1}% 52
+\BOOKMARK [5][-]{subparagraph.3.2.1.2.1}{FUNCTIONAL REQUIREMENT ONE}{paragraph.3.2.1.2}% 53
+\BOOKMARK [4][-]{paragraph.3.2.1.3}{Messages \(communications received or sent\)}{subsubsection.3.2.1}% 54
+\BOOKMARK [2][-]{subsection.3.3}{Performance requirements}{section.3}% 55
+\BOOKMARK [2][-]{subsection.3.4}{Design constraints}{section.3}% 56
+\BOOKMARK [2][-]{subsection.3.5}{Software system attributes}{section.3}% 57
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Reliability}{subsection.3.5}% 58
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Availability}{subsection.3.5}% 59
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Security}{subsection.3.5}% 60
+\BOOKMARK [3][-]{subsubsection.3.5.4}{Maintainability}{subsection.3.5}% 61
+\BOOKMARK [3][-]{subsubsection.3.5.5}{Portability}{subsection.3.5}% 62
+\BOOKMARK [1][-]{section.4}{Supporting information}{}% 63
+\BOOKMARK [2][-]{subsection.4.1}{Table of contents and index}{section.4}% 64
+\BOOKMARK [2][-]{subsection.4.2}{Appendixes}{section.4}% 65
+\BOOKMARK [1][-]{appendix.A}{D\046D5E Character Sheet}{}% 66
+\BOOKMARK [1][-]{appendix.B}{D\046D5E Spellcasting Sheet}{}% 67

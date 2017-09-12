@@ -192,13 +192,13 @@ All of the window contents will be consistent with respect:
 \end{itemize}
 Regarding characteristics particular to specific interfaces:
 \begin{enumerate}
-	\item \textbf{Profile selection screen:} Window where the user shall be able to create or select a profile.
+	\item \hypertarget{profileselection}{\textbf{Profile selection screen:}} Window where the user shall be able to create or select a profile.
 		\begin{itemize}
 			\item A Default profile will be available from the outset.
 			\item Profiles shall be selectable via a drop-down selection box.
 		\end{itemize}
-	\item \textbf{Main menu:} Provides menu of buttons which are used to access the various tools of the application (e.g. "Create character", "Load character").
-	\item \textbf{Character creation mode prompt:} Prompts user to specify how a newly created character's ability scores are generated, in line with the options available within the PHB:
+	\item \hypertarget{mainmenu}{\textbf{Main menu:}} Provides menu of buttons which are used to access the various tools of the application (e.g. "Create character", "Load character").
+	\item \hypertarget{creationprompt}{\textbf{Character creation mode prompt:}} Prompts user to specify how a newly created character's ability scores are generated, in line with the options available within the PHB:
 		\begin{itemize}
 			\item \textit{Randomly}: Where 4 6-sided dice are rolled, the lowest one is discarded, and the remainder are added together. This is done 6 times to provide an array of 6 scores ranging 3-18 (e.g. [11, 12, 9, 15, 16, 8]). The player then chooses which ability is assigned each score. The score rolling process should be transparent and depict the scores being rolled one-by-one in order to involve the player in the score rolling process.
 			\item \textit{Standard array}: Instead of randomly generating values a standard array is provided to assign values from ([15, 14, 13, 12, 10, 8]). 
@@ -221,13 +221,13 @@ Regarding characteristics particular to specific interfaces:
 			\end{table}
 		\item \textit{Manual entry}: The player has free reign to enter values from 3-18 (to account for having physically rolled a set of values or simply accommodating a player's desire to experiment).
 		\end{itemize}
-	\item \textbf{Character sheet:} Provides a character sheet displaying the chosen character's values (or a blank sheet if a new character is being created). Information will need to be laid out and formatted such that it is dense enough to minimise scrolling or tabbing between pages while maintaining readability.
+	\item \hypertarget{charsheet}{\textbf{Character sheet:}} Provides a character sheet displaying the chosen character's values (or a blank sheet if a new character is being created). Information will need to be laid out and formatted such that it is dense enough to minimise scrolling or tabbing between pages while maintaining readability.
 		\begin{itemize}
 			\item Dividing character information into separate tabs or pages containing attributes with a common thread may be recommended (e.g. 3 tabs named "Attributes and Skills", "Attacks \& Equipment", and "Proficiencies \& Traits").
-			\item An "Import character" button should produce a pop-up window providing the option of entering a character import string or specifying the location of a character file.
-			\item An "Export character" button should produce a pop-up window containing a string representing the totality of that character's attributes as well as a button enabling storage of the character within a file.
+			\item A ``Load character'' button should produce a pop-up window providing the option of selecting a stored character to load, entering a character import string, or specifying the location of a character file.
+			\item An ``Export character'' button should produce a pop-up window containing a string representing the totality of that character's attributes as well as a button enabling storage of the character within a file.
 		\end{itemize}
-	\item \textbf{Comparison tool:} A vertically split page with a selection box at the top of each half where a character can be selected to be displayed. In order to fit both characters' information on screen a view mode selection control will be provided (so the user can decide whether to contrast attributes, skills, or other aspects).
+	\item \hypertarget{comparisontool}{\textbf{Comparison tool:}} A vertically split page with a selection box at the top of each half where a character can be selected to be displayed. In order to fit both characters' information on screen a view mode selection control will be provided (so the user can decide whether to contrast attributes, skills, or other aspects).
 \end{enumerate}
 
 \noindent
@@ -252,8 +252,8 @@ Since the application is intended to be operable on relatively low performance h
 	\item \textbf{Profile selection:} The user will be able to select a profile from the list of existing profiles to browse the characters associated with that profile.
 	\item \textbf{Profile deletion:} The user will be able to delete any existing profiles (except the "Default" profile).
 	\item \textbf{Character creation:} The user will be able to create a new character which will be associated with the profile they are using (see Figure \hyperlink{fig:profilerels}{\ref{fig:profilerels}}).
-	\item \textbf{Storing characters:} The user will be able to store characters that they have created or modified in a local file on their system so that the character details can be loaded in future.
-	\item \textbf{Loading characters:} The user will be able to load a previously created character from a local file. Previously loaded profiles will be listed under a "Recently accessed" window.
+	\item \textbf{Storing characters:} The user will be able to store characters that they have created or modified in a local database on their system so that the character details can be loaded in future.
+	\item \textbf{Loading characters:} The user will be able to load a previously created character from a local database. Previously loaded profiles will be listed under a "Recently accessed" window.
 	\item \textbf{Deleting characters:} The user will be able to delete characters associated with the current profile, deleting the local file and that character's listing in the "Recently Accessed" window.
 	\item \textbf{Modifying characters:} Once a character has been created/loaded, the user will be able to make adjustments to the various values associated with the character (e.g. increase it's level, make changes to their inventory, etc).
 	\item \textbf{Export characters to a String:} The application will be able to produce a string representation of the active character sheet which the user can share so that another use may import the same character settings into their application.
@@ -289,7 +289,7 @@ The intended audience of the product will be players of the D\&D5E game, as such
 \subsection{Apportioning of requirements}
 In section \ref{sec:scope} the scope definition included descriptions of how the application could be extended to provide combat simulation tools or be converted to be run in a web browser. Both of these features are considered to be less of a priority than the other functions covered previously and consequently will not be a concern for the rest of this SRS. If a future project does start to extend the application with these features then a separate SRS will be produced. 
 
-
+\clearpage
 \section{Specific requirements}
 % This section of the SRS should contain all of the software requirements to a level of detail sufficient to enable designers to design a system to satisfy those requirements, and testers to test that the system satisfies those requirements. Throughout this section, every stated requirement should be externally perceivable by users, operators, or other external systems. These requirements should include at a minimum a description of every input (stimulus) into the system, every output (response) from the system, and all functions performed by the system in response to an input or in support of an output. As this is often the largest and most important part of the SRS, the following principles apply:
 % - Specific requirements should be stated in conformance with all the characteristics described in 4.3a.
@@ -308,7 +308,6 @@ In section \ref{sec:scope} the scope definition included descriptions of how the
 % - Verifiable;
 % - Modifiable;
 % - Traceable.
-
 
 
 \subsection{External interface requirements}
@@ -330,11 +329,55 @@ In section \ref{sec:scope} the scope definition included descriptions of how the
 
 \subsubsection{User interfaces}
 
-\subsubsection{Hardware interfaces}
+\paragraph{Startup}\mbox{}
+\subparagraph{The application shall display the \protect\hyperlink{profileselection}{Profile selection screen} at program start}\mbox{} \\
 
-\subsubsection{Software interfaces}
+\noindent
+The \hyperlink{profileselection}{Profile selection screen} will be the first window to appear when the program is first executed.
 
-\subsubsection{Communications interfaces}
+\paragraph{Profile selection screen}\mbox{}
+\noindent
+\subparagraph{The \protect\hyperlink{profileselection}{Profile selection screen} shall display all existing profiles}
+\subparagraph{The \protect\hyperlink{profileselection}{Profile selection screen} shall provide a Default profile on initial startup and thereafter}
+\subparagraph{The \protect\hyperlink{profileselection}{Profile selection screen} shall provide means of creating a new profile}
+\subparagraph{The \protect\hyperlink{profileselection}{Profile selection screen} shall provide means of proceeding to the \protect\hyperlink{mainmenu}{Main Menu} with a selected profile}   
+\subparagraph{The \protect\hyperlink{profileselection}{Profile selection screen} shall provide means of deleting a selected profile (except the Default profile)}
+\subparagraph{Pressing the F1 key on the keyboard with the \protect\hyperlink{profileselection}{Profile selection screen} active shall display a help message pop-up relating to the \protect\hyperlink{profileselection}{Profile selection screen}} 
+\subparagraph{The \protect\hyperlink{profileselection}{Profile selection screen} shall include a button which can be clicked to close the application}
+
+
+\paragraph{Main menu}\mbox{}
+\noindent
+\subparagraph{The \protect\hyperlink{mainmenu}{Main menu} shall display a collection of navigation buttons which can be clicked to access every one of the following facilities:}
+\begin{enumerate}
+	\item Create character;
+	\item Load character;
+	\item Compare character.
+\end{enumerate}
+\subparagraph{The \protect\hyperlink{mainmenu}{Main menu} shall include a button which can be clicked to return to the \protect\hyperlink{profileselection}{Profile selection screen}}
+\subparagraph{Pressing the F1 key on the keyboard with the \protect\hyperlink{mainmenu}{Main menu} active shall display a help message pop-up relating to the \protect\hyperlink{mainmenu}{Main menu}}
+\subparagraph{When the \textbf{Create character} button is clicked the user will be prompted to select how they would like to generate their character's ability scores}
+\subparagraph{Pressing the \textit{1} key while the \protect\hyperlink{mainmenu}{Main menu} is active will prompt the user to select how they would like to generate their character's ability scores}
+\subparagraph{When the \textbf{Load character} button is clicked the application should display the \protect\hyperlink{charsheet}{Character sheet} and immediately open a pop-up window as if the ``Load character'' button on the \protect\hyperlink{charsheet}{Character sheet} had been clicked}
+\subparagraph{When the \textit{2} key is pressed the application should display the \protect\hyperlink{charsheet}{Character sheet} and immediately open a pop-up window as if the ``Load character'' button on the \protect\hyperlink{charsheet}{Character sheet} had been clicked}
+\subparagraph{When the \textbf{Compare character} button is clicked the \protect\hyperlink{comparisontool}{Comparison tool} should be displayed}
+\subparagraph{When the \textit{3} key is pressed the \protect\hyperlink{comparisontool}{Comparison tool} should be displayed}
+\subparagraph{Pressing the \textit{Escape} key while the \protect\hyperlink{mainmenu}{Main menu} is active will return to the \protect\hyperlink{profileselection}{Profile selection screen}}
+
+
+\paragraph{Character creation mode prompt}\mbox{}
+\noindent
+\subparagraph{The \protect\hyperlink{creationprompt}{Character creation mode prompt} shall include a button which can be clicked to return to the \protect\hyperlink{mainmenu}{Main Menu}}
+\subparagraph{The \protect\hyperlink{creationprompt}{Character creation mode prompt} shall provide selection buttons and explanations of the 4 options:}
+\begin{enumerate}
+	\item Randomly;
+	\item Standard array;
+	\item Customised ability scores;
+	\item Manual entry.
+\end{enumerate}
+\subparagraph{If the ``Randomly'' option is selected then}
+
+
 
 \subsection{Classes/Objects}
 \subsubsection{CLASS/OBJECT-ONE}
